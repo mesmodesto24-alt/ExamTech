@@ -1,0 +1,49 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ExamTech Cameroun — Pack déployé</title><style>body{font-family:system-ui,sans-serif;margin:0;background:#f6f4ea;color:#14211a}header{background:#007A5E;color:#fff;padding:24px}main{max-width:760px;margin:0 auto;padding:20px}section{background:#fff;border:1px solid #ded9c4;border-radius:16px;padding:16px;margin:16px 0}input,select,button{font:inherit;padding:10px 12px;border-radius:10px;border:1.5px solid #ded9c4;width:100%;margin-top:6px}button{background:#007A5E;color:#fff;font-weight:800;cursor:pointer}pre{white-space:pre-wrap;background:#f6f4ea;border-radius:10px;padding:12px}</style></head><body><header><h1>ExamTech Cameroun</h1><p>Pack déployé — examtech-cameroun.html</p></header><main><section><h2>Bienvenue</h2><p>Compte : Compte Démo — Filière : MENU — Banque : 18 questions — Historique : 0 sujets.</p><p><b>Note :</b> dans la version déployée, tes données sont enregistrées dans la base de données de l'application, pas dans ce fichier.</p></section><section><h2>Tester le login démo</h2><label>E-mail <input id="demo-email" value="demo@examtech.cm"></label><label>Mot de passe <input id="demo-pass" type="password" value="demo1234"></label><button onclick="var e=document.getElementById('demo-email').value;var p=document.getElementById('demo-pass').value;document.getElementById('demo-result').textContent=(e==='demo@examtech.cm'&&p==='demo1234')?'Bienvenue, compte démo ! Tu peux utiliser le mini-générateur ci-dessous.':'E-mail ou mot de passe incorrect.';">Tester le login démo</button><p id="demo-result"></p></section><section><h2>Mini-générateur (aperçu)</h2><label>Filière <select id="pack-filiere"></select></label><label>Module <select id="pack-module"></select></label><label>Titre <input id="pack-title" value="Épreuve — révision guidée"></label><button onclick="generatePack()">Générer une épreuve</button><pre id="pack-output">Choisis une filière et un module, puis génère.</pre></section><section><h2>Guide de déploiement</h2><pre>GUIDE DE DÉPLOIEMENT — ExamTech Cameroun
+
+Ton app vit pour l'instant en aperçu. Pour avoir une vraie adresse (ex : examtech-cameroun.vercel.app) que tu peux ouvrir sur ton téléphone et partager, il faut 2 étapes : (1) mettre le code sur GitHub, (2) brancher Vercel. C'est gratuit, sans carte bancaire.
+
+CHECKLIST — Déploiement : 1 / 5
+[x] J'ai un compte GitHub
+[ ] J'ai téléchargé le pack
+[ ] J'ai mis le pack sur GitHub
+[ ] J'ai branché Vercel
+[ ] J'ai ouvert mon adresse et testé le login démo
+
+ÉTAPE 1 — Compte GitHub
+Va sur github.com/signup (gratuit) et crée ton compte. Note ton nom GitHub : il servira pour l'adresse de ton dépôt.
+
+ÉTAPE 2 — Télécharger le pack
+Dans l'app, clique sur « Télécharger le pack ExamTech (HTML) ». Tu reçois le fichier examtech-cameroun.html.
+Note : dans la version déployée, tes données sont enregistrées dans la base de données de l'application, pas dans ce fichier.
+
+ÉTAPE 3 — GitHub
+Sur GitHub : « Nouveau dépôt » → nom examtech-cameroun → Public → Add README → Upload files → glisser examtech-cameroun.html → Commit.
+Ou avec git (remplace TON-NOM par ton nom GitHub) :
+git init
+git add .
+git commit -m "ExamTech Cameroun"
+git branch -M main
+git remote add origin https://github.com/TON-NOM/examtech-cameroun.git
+git push -u origin main
+
+ÉTAPE 4 — Vercel
+Va sur vercel.com/signup → Add New → Project → Import Git Repository → choisir examtech-cameroun → Deploy.
+Aucune commande de build n'est nécessaire (HTML statique). Framework : Other, Build Command : laisser vide.
+Après Deploy, Vercel te donne ton adresse : https://examtech-cameroun.vercel.app
+
+ÉTAPE 5 — Tester en ligne
+Ouvrir l'adresse sur téléphone → Tester compte démo demo@examtech.cm / demo1234 → Générer une épreuve → Exporter PDF.
+
+DÉPANNAGE
+- Mon adresse affiche une page blanche : attends 1 minute, puis vide le cache de ton navigateur et rouvre l'adresse.
+- Vercel demande un Build Command : laisse-le vide, et choisis Framework : Other.
+- Mon dépôt n'apparaît pas : vérifie que tu es connecté au bon compte GitHub, puis actualise la page Vercel.
+- Je n'ai pas d'ordinateur : tout se fait depuis le téléphone, GitHub et Vercel ont des sites mobiles.</pre></section></main><script>var DATA=[{"filiere":"MENU","modules":[{"label":"Dessiner les éléments de menuiserie","chapters":["Porte à un vantail","Porte à deux vantaux","Porte isoplane","Fenêtre à un vantail"]},{"label":"Réaliser un ouvrage de menuiserie","chapters":["Lecture du plan de débit","Traçage et débit","Contrôle des pièces débitées","Assemblage tenon-mortaise"]},{"label":"Technologie de la menuiserie","chapters":["Essences de bois","Défauts du bois","Choix du bois","Paumelles et charnières"]}]},{"filiere":"AMEB","modules":[{"label":"Restauration des Ouvrages","chapters":["Diagnostic","Relevé des désordres","Matériaux de restauration","Dosages"]},{"label":"Connaissance des matériaux","chapters":["Ciment","Sable et granulats","Béton","Bois de construction"]},{"label":"Techniques de restauration","chapters":["Reprise en sous-œuvre","Étaiement","Enduit","Ravalement"]}]},{"filiere":"MAGE","modules":[{"label":"Mécanique appliquée","chapters":["Forces","Équilibre d’un solide","Moments","Mouvement rectiligne"]},{"label":"Technologie mécanique","chapters":["Engrenages","Courroies et poulies","Roulements"]},{"label":"Maintenance des systèmes","chapters":["Diagnostic","Relevé des symptômes","Entretien préventif","Graissage"]}]},{"filiere":"CHARPENTERIE","modules":[{"label":"Réaliser une charpente bois","chapters":["Épure d’une ferme simple","Tracé des assemblages","Choix des bois","Débit des pièces"]},{"label":"Assemblages bois","chapters":["Traçage","Taille","Ajustage"]},{"label":"Lecture de plans charpente","chapters":["Plan de ferme","Cotation","Symboles"]}]},{"filiere":"TRONC_COMMUN","modules":[{"label":"Dessin technique","chapters":["Projection de face","Projection de dessus","Projection de profil","Coupe simple"]},{"label":"Français","chapters":["Lecture et analyse","Idée principale","Rédaction","Organisation du texte"]},{"label":"Mathématiques","chapters":["Équations","Calcul littéral","Figures planes","Théorème de Pythagore"]}]},{"filiere":"AUTRE","modules":[{"label":"Module général","chapters":["Notion 1 — Découverte","Lecture et analyse","Notion 2 — Méthode","Mise en pratique guidée"]},{"label":"Projet pratique","chapters":["Étude de cas","Projet guidé"]}]}];var filiereEl=document.getElementById('pack-filiere');var moduleEl=document.getElementById('pack-module');DATA.forEach(function(g){var o=document.createElement('option');o.value=g.filiere;o.textContent=g.filiere;filiereEl.appendChild(o);});function fillModules(){moduleEl.innerHTML='';var g=DATA.find(function(x){return x.filiere===filiereEl.value})||DATA[0];g.modules.forEach(function(m){var o=document.createElement('option');o.value=m.label;o.textContent=m.label;moduleEl.appendChild(o);});}filiereEl.onchange=fillModules;fillModules();function generatePack(){var g=DATA.find(function(x){return x.filiere===filiereEl.value})||DATA[0];var m=g.modules.find(function(x){return x.label===moduleEl.value})||g.modules[0];document.getElementById('pack-output').textContent='ÉVALUATION — '+document.getElementById('pack-title').value+'
+Filière : '+g.filiere+' | Module : '+m.label+'
+Chapitres : '+(m.chapters||[]).join(' • ')+'
+
+Exercice 1 — Analyse (6 pts) : décrire le besoin et proposer une méthode.
+Exercice 2 — Réalisation / calcul (8 pts) : réaliser le tracé ou le calcul demandé.
+Exercice 3 — Réinvestissement (6 pts) : adapter la démarche à un cas proche et contrôler le résultat.
+
+Correction : voir les attendus dans chaque exercice. Relis et adapte à ta classe avant distribution.';}</script></body></html>
